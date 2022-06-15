@@ -1,0 +1,137 @@
+/* 
+  Global variables
+*/
+:root {
+  --site-container-width: 1400px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+a:visited {
+  color: inherit;
+}
+
+/* 
+  Site Header
+*/
+
+.nav-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.site-header {
+  max-width: var(--site-container-width);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0 auto;
+}
+
+/* 
+  Site Branding
+*/
+
+.site-branding {
+  margin: 1rem;
+}
+
+/*
+  Navigation
+*/
+
+.nav-menu {
+  width: 100%;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.menu-item {
+  margin: 1rem 0.5rem;
+}
+.menu-item a {
+  display: block;
+  text-decoration: none;
+  padding: 0;
+}
+
+/* 
+  Hamburger
+*/
+.hamburger-container {
+  display: inline-block;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: none;
+  background: none;
+  position: absolute;
+  right: 1rem;
+  z-index: 9999;
+  display: none;
+}
+.hamburger-slice1, .hamburger-slice2, .hamburger-slice3 {
+  content: "";
+  display: block;
+  width: 35px;
+  height: 5px;
+  margin: 6px 0;
+  border-radius: 3px;
+  background-color: black;
+  transition: 0.35s;
+}
+
+.hamburger-toggled .hamburger-slice1 {
+  background-color: white;
+  -webkit-transform: rotate(-45deg) translate(-9px, 7px);
+  transform: rotate(-45deg) translate(-9px, 7px);
+}
+.hamburger-toggled .hamburger-slice2 {
+  opacity: 0;
+}
+.hamburger-toggled .hamburger-slice3 {
+  background-color: white;
+  -webkit-transform: rotate(45deg) translate(-8px, -7px);
+  transform: rotate(45deg) translate(-8px, -7px);
+}
+
+@media (max-width: 1000px){
+  .hamburger-container {
+    display: block;
+  }
+  .primary-navigation-wrapper {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgb(17, 17, 17);
+    color: #e7e7e7;
+    font-size: 1.5rem;
+    z-index: 1000;
+    transform: translate(100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .primary-navigation-wrapper[data-visible="true"] {
+    transform: translate(0%);
+    transition: transform 350ms ease-out;
+  }
+  .nav-menu {
+    flex-direction: column;
+  }
+}
