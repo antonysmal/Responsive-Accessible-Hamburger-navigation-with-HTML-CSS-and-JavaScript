@@ -1,0 +1,35 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Responsive Accessible Hamburger navigation with HTML, CSS and JavaScript</title>
+  <meta name="description" content="Responsive Accessible Hamburger navigation with HTML, CSS and JavaScript.">
+  <meta name="author" content="Antony Smal">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="nav-container">
+    <header class="site-header">
+      <div class="site-branding">
+        <div class="site-title"><p>Antony Smal</p></div>
+      </div>
+      <div class="primary-navigation-wrapper" data-visible="false">
+        <nav class="primary-navigation" aria-label="Main navigation" >
+          <ul id="navigation" class="nav-menu" >
+            <li class="menu-item"><a href="#">Home</a></li>
+            <li class="menu-item"><a href="#">About Us</a></li>
+            <li class="menu-item"><a href="#">Contact Us</a></li>
+          </ul>
+        </nav>
+      </div>
+      <button class="hamburger-container" aria-controls="primary-navigation" aria-expanded="false" aria-label="Open main navigation">
+        <span class="hamburger-slice1"></span>
+        <span class="hamburger-slice2"></span>
+        <span class="hamburger-slice3"></span>
+      </button>
+    </header>
+  </div>
+  <!-- Importing navigation script -->
+  <script src="navigation.js" defer></script>
+</body>
+</html>
